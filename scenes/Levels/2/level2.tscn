@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://b4v0j53fa8kha"]
+
+[ext_resource type="Script" path="res://scenes/Levels/scripts/levels.gd" id="1_hi1c4"]
+[ext_resource type="PackedScene" uid="uid://hh7j5tjtbajs" path="res://scenes/city/land_test.tscn" id="1_radnh"]
+[ext_resource type="PackedScene" uid="uid://cmkqgy4e1mm5a" path="res://scenes/Levels/level_transition.tscn" id="4_ftbjj"]
+[ext_resource type="PackedScene" uid="uid://b508ohtdxmsi2" path="res://scenes/Levels/player_spawn.tscn" id="5_afrmv"]
+[ext_resource type="PackedScene" uid="uid://upgxqp8c74le" path="res://scenes/Invisible wall/bounds.tscn" id="6_ksplf"]
+[ext_resource type="Texture2D" uid="uid://dx5sy8nvgy54w" path="res://texture/sky_2.png" id="7_k6l0v"]
+[ext_resource type="PackedScene" uid="uid://by816f2a5273y" path="res://scenes/Props/Trees/Tree.tscn" id="7_pcvjj"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2yk11"]
+panorama = ExtResource("7_k6l0v")
+
+[sub_resource type="Sky" id="Sky_3smv3"]
+sky_material = SubResource("PanoramaSkyMaterial_2yk11")
+
+[sub_resource type="Environment" id="Environment_ntb0m"]
+background_mode = 2
+sky = SubResource("Sky_3smv3")
+fog_light_color = Color(0.846336, 0.861964, 0.88653, 1)
+fog_light_energy = 2.0
+fog_density = 0.0001
+
+[node name="Level2" type="Node3D"]
+script = ExtResource("1_hi1c4")
+
+[node name="LandTest" parent="." instance=ExtResource("1_radnh")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433014, 0.249999, 0.272334, 0.0108232, 0.962142, -0.419327, 0.901322, 0.108551, 1.32579, 8.08096, 1.42246)
+light_color = Color(1, 0.858824, 0.529412, 1)
+light_angular_distance = 0.5
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="LevelTransition" parent="." instance=ExtResource("4_ftbjj")]
+transform = Transform3D(-0.959048, 0.0848704, -0.27023, 0.102652, 0.99334, -0.052336, 0.263988, -0.0779322, -0.961372, -43.12, 19.2305, -29.0262)
+level = "res://scenes/Levels/1/level1.tscn"
+target_tansition_area = "LevelTransition"
+
+[node name="LevelTransition2" parent="." instance=ExtResource("4_ftbjj")]
+transform = Transform3D(0.996555, 0.041768, -0.0716541, -0.0418757, 0.999123, 2.84502e-09, 0.0715913, 0.00300056, 0.99743, -52.006, 16.929, -84.6057)
+level = "res://scenes/Levels/3/level3.tscn"
+target_tansition_area = "LevelTransition2"
+side = 1
+
+[node name="Bounds4" parent="." instance=ExtResource("6_ksplf")]
+transform = Transform3D(-0.996667, 0.238228, -0.483731, 0.10662, 2.79917, -0.0949393, 0.274931, -0.221921, -1.71678, -42.0651, 15.9902, -25.8491)
+visible = false
+size = Vector3(37.1538, 2.75854, 0.001)
+
+[node name="Bounds5" parent="." instance=ExtResource("6_ksplf")]
+transform = Transform3D(0.735819, -0.26218, -1.25051, -0.0420679, 2.77383, -0.306736, 0.732872, 0.422458, 1.23793, -75.1879, 19.7303, -39.7274)
+visible = false
+size = Vector3(54.2195, 2.75854, 0.001)
+
+[node name="Bounds6" parent="." instance=ExtResource("6_ksplf")]
+transform = Transform3D(0.782891, 0.402937, 1.14676, -0.0420679, 2.77383, -0.306736, -0.682358, 0.291292, 1.33462, -75.1879, 19.7303, -73.3974)
+visible = false
+size = Vector3(54.2195, 2.75854, 0.001)
+
+[node name="Exit" parent="." instance=ExtResource("6_ksplf")]
+transform = Transform3D(1.03775, 0.0936348, -0.0801462, -0.0420679, 2.77383, -0.306736, 0.0399756, 0.488305, 1.75779, -44.006, 16.9289, -89.3646)
+visible = false
+size = Vector3(29.3951, 3.50525, 0.001)
+
+[node name="Bounds8" parent="." instance=ExtResource("6_ksplf")]
+transform = Transform3D(0.218881, -0.449778, -1.72267, -0.0420679, 2.77383, -0.306736, 1.0152, 0.211918, 0.358705, -34.2827, 14.241, -61.307)
+visible = false
+size = Vector3(61.866, 4.95087, 0.001)
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("5_afrmv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.0391, 14.2171, -39.1993)
+
+[node name="Tree" parent="." instance=ExtResource("7_pcvjj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.9386, 15.5691, -65.2007)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ntb0m")

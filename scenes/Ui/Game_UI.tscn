@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://brwyr418w4h3f"]
+
+[ext_resource type="Script" path="res://scenes/Ui/scripts/game_ui.gd" id="1_5ybia"]
+[ext_resource type="Texture2D" uid="uid://bbfhwpw52r2ds" path="res://scenes/Ui/images/1000136284_enhanced.png" id="1_gdmy2"]
+[ext_resource type="Texture2D" uid="uid://p6u5pldnwpon" path="res://scenes/Ui/images/1000136274_enhanced.png" id="2_rua3q"]
+
+[node name="GameUi" type="CanvasLayer"]
+script = ExtResource("1_5ybia")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="UI"]
+position = Vector2(4, 72)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_gdmy2")
+centered = false
+offset = Vector2(0, -200)
+region_enabled = true
+region_rect = Rect2(65, 239, 1008, 390)
+
+[node name="Sprite2D2" type="Sprite2D" parent="UI"]
+position = Vector2(403, 630)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_rua3q")
+centered = false
+region_enabled = true
+region_rect = Rect2(138, 55, 886, 153)

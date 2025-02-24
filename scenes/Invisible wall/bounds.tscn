@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://upgxqp8c74le"]
+
+[node name="Bounds" type="CSGBox3D"]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0, 0, 0)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+size = Vector3(17.02, 1, 0.001)

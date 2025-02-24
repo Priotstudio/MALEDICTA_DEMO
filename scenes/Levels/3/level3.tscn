@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://cufc5puw1dq5u"]
+
+[ext_resource type="Script" path="res://scenes/Levels/scripts/levels.gd" id="1_4d5pj"]
+[ext_resource type="PackedScene" uid="uid://hh7j5tjtbajs" path="res://scenes/city/land_test.tscn" id="2_saqt2"]
+[ext_resource type="PackedScene" uid="uid://upgxqp8c74le" path="res://scenes/Invisible wall/bounds.tscn" id="4_0bb5y"]
+[ext_resource type="PackedScene" uid="uid://cmkqgy4e1mm5a" path="res://scenes/Levels/level_transition.tscn" id="5_pwdqq"]
+[ext_resource type="Texture2D" uid="uid://dx5sy8nvgy54w" path="res://texture/sky_2.png" id="6_l1aw0"]
+[ext_resource type="PackedScene" uid="uid://b508ohtdxmsi2" path="res://scenes/Levels/player_spawn.tscn" id="6_pxo8h"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_cp0rq"]
+panorama = ExtResource("6_l1aw0")
+
+[sub_resource type="Sky" id="Sky_etkmu"]
+sky_material = SubResource("PanoramaSkyMaterial_cp0rq")
+
+[sub_resource type="Environment" id="Environment_3g6w5"]
+background_mode = 2
+sky = SubResource("Sky_etkmu")
+fog_light_color = Color(0.846336, 0.861964, 0.88653, 1)
+fog_light_energy = 2.0
+fog_density = 0.0001
+
+[node name="Level3" type="Node3D"]
+script = ExtResource("1_4d5pj")
+
+[node name="LandTest" parent="." instance=ExtResource("2_saqt2")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433014, 0.249999, 0.272334, 0.0108232, 0.962142, -0.419327, 0.901322, 0.108551, 1.32579, 8.08096, 1.42246)
+light_color = Color(1, 0.858824, 0.529412, 1)
+light_angular_distance = 0.5
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="exit" parent="." instance=ExtResource("4_0bb5y")]
+transform = Transform3D(-0.10223, -0.165958, -1.77437, -0.079483, 2.80604, -0.0919124, 1.03127, 0.199817, -0.182976, -45.0803, 13.4003, -149.598)
+visible = false
+size = Vector3(29.3951, 6.01852, 0.001)
+
+[node name="exit2" parent="." instance=ExtResource("4_0bb5y")]
+transform = Transform3D(-1.00286, -0.1716, 0.456491, -0.079483, 2.80604, -0.0919124, -0.261248, -0.194993, -1.72438, -39.1031, 13.874, -135.835)
+visible = false
+size = Vector3(17.4748, 6.01852, 0.001)
+
+[node name="border2" parent="." instance=ExtResource("4_0bb5y")]
+transform = Transform3D(-0.747593, -0.417073, -1.21241, -0.0420679, 2.77383, -0.306736, 0.720858, -0.270664, -1.27527, -19.0486, 13.6964, -177.54)
+visible = false
+size = Vector3(43.4738, 6.01852, 0.001)
+
+[node name="border3" parent="." instance=ExtResource("4_0bb5y")]
+transform = Transform3D(-0.614688, 0.323882, 1.42561, -0.0420679, 2.77383, -0.306736, -0.837072, -0.377239, -1.03145, 1.82041, 14.7648, -178.383)
+visible = false
+size = Vector3(60.6715, 6.01852, 0.001)
+
+[node name="border4" parent="." instance=ExtResource("4_0bb5y")]
+transform = Transform3D(0.507381, 0.477496, 1.52921, -0.0420679, 2.77383, -0.306736, -0.906143, 0.13859, 0.870499, 29.3951, -1.20902, -199.262)
+visible = false
+size = Vector3(150.399, 9.3828, 0.001)
+
+[node name="LevelTransition2" parent="." instance=ExtResource("5_pwdqq")]
+transform = Transform3D(-0.0876868, -0.0409919, 0.995304, -0.03344, 0.998711, 0.0381861, -0.995587, -0.0299346, -0.0889446, -38.893, 20.2579, -149.644)
+level = "res://scenes/Levels/2/level2.tscn"
+target_tansition_area = "LevelTransition2"
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("6_pxo8h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.544, 5.51424, -150.419)
+visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3g6w5")

@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0xl837vp7t5q"]
+
+[ext_resource type="Shader" path="res://scenes/Ui/minimap.gdshader" id="1_qd6xl"]
+[ext_resource type="Script" path="res://scenes/Ui/scripts/minimap.gd" id="1_r84gn"]
+[ext_resource type="Texture2D" uid="uid://ddmjkygdsg2ot" path="res://scenes/Ui/images/700e0334-c2c3-41b4-81d6-3130184e4677_removalai_preview_enhanced.png" id="3_uo4v4"]
+[ext_resource type="Texture2D" uid="uid://bg4f67dg4xmhh" path="res://scenes/Ui/images/e52b324b-4bc3-4e3a-8ff6-e90b29d2552b_removalai_preview_enhanced.png" id="4_gnfti"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_44r47"]
+shader = ExtResource("1_qd6xl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b4gs1"]
+shader = ExtResource("1_qd6xl")
+
+[node name="minimap" type="ColorRect"]
+material = SubResource("ShaderMaterial_44r47")
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -227.0
+offset_top = -208.0
+offset_right = -77.0
+offset_bottom = -58.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(0.0911214, 0.0911215, 0.0911214, 1)
+script = ExtResource("1_r84gn")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_b4gs1")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(150, 150)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 20, 0)
+projection = 1
+current = true
+size = 20.0
+
+[node name="indicator" type="Sprite2D" parent="."]
+position = Vector2(78.3586, 75.6414)
+scale = Vector2(0.0487057, 0.0487057)
+texture = ExtResource("3_uo4v4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -29.0
+offset_top = -48.0
+offset_right = 639.0
+offset_bottom = 664.0
+scale = Vector2(0.34694, 0.34694)
+texture = ExtResource("4_gnfti")

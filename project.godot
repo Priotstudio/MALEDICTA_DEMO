@@ -1,0 +1,67 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="MALEDICTA_DEMO"
+config/tags=PackedStringArray("ongoing")
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+run/max_fps=60
+config/icon="res://icon.svg"
+
+[autoload]
+
+PlayerManager="*res://00_Globals/player_manager.gd"
+LevelManager="*res://00_Globals/level_manager.gd"
+GameUi="*res://scenes/Ui/Game_UI.tscn"
+InGameLoading="*res://scenes/Ui/in_game_loading/in_game_loading.tscn"
+
+[display]
+
+window/size/window_width_override=1920
+window/size/window_height_override=1080
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/mixamo_animation_retargeter/plugin.cfg")
+
+[filesystem]
+
+import/blender/enabled=false
+
+[input]
+
+run={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194325,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+kick={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":90,"key_label":0,"unicode":122,"location":0,"echo":false,"script":null)
+]
+}
+
+[layer_names]
+
+3d_physics/layer_1="player"
+3d_physics/layer_2="wall"
+3d_physics/layer_3="enemy"
+
+[physics]
+
+3d/run_on_separate_thread=true
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+occlusion_culling/use_occlusion_culling=true

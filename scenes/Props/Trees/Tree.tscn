@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=4 uid="uid://by816f2a5273y"]
+
+[ext_resource type="Texture2D" uid="uid://cqnru61pmu52v" path="res://scenes/Props/Trees/tree_big_tree_texture.png" id="1_akjks"]
+[ext_resource type="Script" path="res://scenes/scripts/Duplicator.gd" id="1_rll68"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dug5s"]
+resource_name = "tree_big"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_akjks")
+texture_repeat = false
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cwroo"]
+_surfaces = [{
+"aabb": AABB(-0.418667, -0.418667, -1.00045, 0.837333, 0.837334, 1),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray("AAADAAEAAAACAAMABAAHAAUABAAGAAcACAALAAkACAAKAAsADAAPAA0ADAAOAA8A"),
+"name": "tree_big",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AAD/f/7/AAD///9//v8AAAAA/38AAAAA////fwAAAAD/fwAA/v8AAP9//v///wAA/38AAAAAAAD/f///AAAAAH0lfSX+/wAAgdqB2v//AAB9JX0lAAAAAIHagdoAAAAAgdp9Jf7/AAB9JYHa//8AAIHafSUAAAAAfSWB2gAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_dhdgi"]
+resource_name = "tree_TCom_Trees0230_1_L"
+_surfaces = [{
+"aabb": AABB(-0.418667, -0.418667, -1.00045, 0.837333, 0.837334, 1),
+"attribute_data": PackedByteArray("Vgmo9qj2qPZWCdQHqPbUB1YJqPao9qj2VgnUB6j21AdWCaj2qPao9lYJ1Aeo9tQHVgmo9qj2qPZWCdQHqPbUBw=="),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray("AAADAAEAAAACAAMABAAHAAUABAAGAAcACAALAAkACAAKAAsADAAPAA0ADAAOAA8A"),
+"material": SubResource("StandardMaterial3D_dug5s"),
+"name": "tree_big",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AAD/f/7//7////9//v//vwAA/38AAP+/////fwAA/7//fwAA/v9U1f9//v///1TV/38AAAAAVNX/f///AABU1X0lfSX+//zFgdqB2v///MV9JX0lAAD8xYHagdoAAPzFgdp9Jf7/qul9JYHa//+q6YHafSUAAKrpfSWB2gAAqun///9/////f////3////9/VNVU1VTVVNVU1VTVVNVU1f/i/bn/4v25/+L9uf/i/bn6ygjq+soI6vrKCOr6ygjq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_cwroo")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2frhg"]
+height = 4.75445
+
+[node name="Tree" type="MultiMeshInstance3D"]
+script = ExtResource("1_rll68")
+Generation_Num = 1
+
+[node name="tree_big" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.71136e-06, 7.17794, 0, 0, 0, -7.17794, -7.17794, 1.71136e-06, 0, 0, 0, 0)
+lod_bias = 0.01
+mesh = SubResource("ArrayMesh_dhdgi")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tree_big"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tree_big/StaticBody3D"]
+transform = Transform3D(0.0698669, 0, 0, 0, -3.05398e-09, -0.0698669, 0, 0.0698669, -3.05398e-09, 0, 0, -0.167105)
+shape = SubResource("CylinderShape3D_2frhg")

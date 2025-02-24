@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://baxnd5sdp34k1"
+path.s3tc="res://.godot/imported/land2_WheatGrass_Clump_Normal.png-ad676dc66117d90eeecb53d59450ce1b.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "7f7431ec3b2447599474e36e333628d1"
+}
+
+[deps]
+
+source_file="res://scenes/Land/land2_WheatGrass_Clump_Normal.png"
+dest_files=["res://.godot/imported/land2_WheatGrass_Clump_Normal.png-ad676dc66117d90eeecb53d59450ce1b.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://scenes/land2_WheatGrass_Clump_Normal.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

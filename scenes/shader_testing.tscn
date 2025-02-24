@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcitihbkegwa4"]
+
+[ext_resource type="Shader" path="res://scenes/render.gdshader" id="1_dj8ha"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ihs5m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kia74"]
+render_priority = 0
+shader = ExtResource("1_dj8ha")
+shader_parameter/mainColor = Color(0.858354, 0.336793, 0.238189, 1)
+
+[node name="Shader_testing" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.395545, -0.789728, 0.468906, 0.12749, 0.45839, 0.87956, -0.909555, 0.407687, -0.0806317, 0, 0.74738, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_ihs5m")
+surface_material_override/0 = SubResource("ShaderMaterial_kia74")
