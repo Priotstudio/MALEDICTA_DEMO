@@ -11,7 +11,10 @@ class_name MiniMap extends ColorRect
 @onready var camera := $SubViewportContainer/SubViewport/Camera3D
 @onready var indicator := $indicator
 @onready var minimap := $"."  # Reference to the minimap itself
+
 var markers = {}  # Store markers for objectives
+var last_valid_direction := Vector3.FORWARD
+
 
 func _ready():
 	# Make sure the number of objectives matches the number of textures
@@ -41,6 +44,13 @@ func _process(delta: float) -> void:
 		camera.size = camera_distance
 		camera.position = Vector3(player.position.x, camera_distance, player.position.z)
 		camera.rotation.z = player.rotation.y
+		
+		
+		if player.direction != Vector3.ZERO:
+			# Update the last valid direction when the player is moving
+			last_valid_direction = player.direction
+		var angle = atan2(last_valid_direction.z, last_valid_direction.x)
+		indicator.rotation = angle + PI / 2 + camera.rotation.z
 
 # Function to update the minimap markers based on objective positions
 func update_minimap_markers():

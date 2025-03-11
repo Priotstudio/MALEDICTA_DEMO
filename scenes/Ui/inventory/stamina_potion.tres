@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://df7nbb04wkmbo"]
+
+[ext_resource type="Script" path="res://scenes/Ui/inventory/scripts/resource_item_data.gd" id="1_6yafy"]
+[ext_resource type="Texture2D" uid="uid://heiyfhxcxvmg" path="res://scenes/Ui/inventory/images/Game_Icon_Elixir__Jana_Vorster_Broodryk-removebg-preview.png" id="2_65f4w"]
+
+[resource]
+script = ExtResource("1_6yafy")
+name = "Stamina Potion"
+decription = "Increase and fills up your stamina."
+texture = ExtResource("2_65f4w")
+is_consumable = true

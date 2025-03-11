@@ -1,0 +1,251 @@
+[gd_scene load_steps=15 format=3 uid="uid://rm66p3e1dg3r"]
+
+[ext_resource type="Script" path="res://scenes/Ui/inventory/quick_inventory/script/quick_inventory.gd" id="1_6dee2"]
+[ext_resource type="Resource" uid="uid://q2hlu58yl56c" path="res://scenes/Ui/inventory/player_inventory.tres" id="2_5eh2u"]
+[ext_resource type="Texture2D" uid="uid://cs4d875kfdke1" path="res://scenes/Ui/inventory/quick_inventory/images/download__2_-removebg-preview_enhanced.png" id="3_8epag"]
+[ext_resource type="Texture2D" uid="uid://dtfl07bwchs8j" path="res://scenes/Ui/inventory/images/Inspiration_for_a_bottle_of_Verin_s_poison_-removebg-preview.png" id="3_dfnup"]
+[ext_resource type="FontFile" uid="uid://bduuttop6xnh8" path="res://fonts/VTCGoblinHandItalic.ttf" id="4_34k1j"]
+[ext_resource type="Texture2D" uid="uid://c6ib1gf65fvwm" path="res://scenes/Ui/inventory/quick_inventory/images/Gold_shiny_glitter_glowing_vintage_frame_vector_image_on_VectorStock-removebg-preview_enhanced.png" id="6_mw2nq"]
+
+[sub_resource type="Animation" id="Animation_e56qy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Display_item:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(95, 510)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Display_item:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7y5xs"]
+resource_name = "fade_out_left"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display_item:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(95, 510), Vector2(16, 510)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Display_item:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.498039), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0844j"]
+resource_name = "fade_in_left"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display_item:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(179, 510), Vector2(95, 510)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Display_item:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.498039), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_e12is"]
+resource_name = "fade_out_right"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display_item:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(95, 510), Vector2(179, 510)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Display_item:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.498039), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hivl5"]
+resource_name = "fade_in_right"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Display_item:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(16, 510), Vector2(95, 510)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Display_item:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.498039), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fqr20"]
+_data = {
+"RESET": SubResource("Animation_e56qy"),
+"fade_in_left": SubResource("Animation_0844j"),
+"fade_in_right": SubResource("Animation_hivl5"),
+"fade_out_left": SubResource("Animation_7y5xs"),
+"fade_out_right": SubResource("Animation_e12is")
+}
+
+[sub_resource type="Animation" id="Animation_c7eyd"]
+resource_name = "glow_outline"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../TextureRect:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mouu2"]
+_data = {
+"glow_outline": SubResource("Animation_c7eyd")
+}
+
+[node name="quick inventory" type="Control" node_paths=PackedStringArray("item_texture_rect", "item_quantity_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6dee2")
+inventory_data = ExtResource("2_5eh2u")
+item_texture_rect = NodePath("Display_item")
+item_quantity_label = NodePath("Display_item/Label")
+
+[node name="slot_bar" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 441.0
+offset_right = 609.0
+offset_bottom = 1121.0
+scale = Vector2(0.417521, 0.417521)
+texture = ExtResource("3_8epag")
+
+[node name="Display_item" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 510.0
+offset_right = 594.0
+offset_bottom = 1010.0
+scale = Vector2(0.298861, 0.298861)
+texture = ExtResource("3_dfnup")
+
+[node name="Label" type="Label" parent="Display_item"]
+layout_mode = 0
+offset_left = 27.8199
+offset_top = 135.125
+offset_right = 67.8199
+offset_bottom = 158.125
+scale = Vector2(5.08439, 5.08439)
+theme_override_fonts/font = ExtResource("4_34k1j")
+text = "99"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = -334.0
+offset_top = 102.0
+offset_right = 672.0
+offset_bottom = 1094.0
+scale = Vector2(0.213715, 0.213715)
+pivot_offset = Vector2(503, 496)
+texture = ExtResource("6_mw2nq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fqr20")
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimationPlayer")
+libraries = {
+"": SubResource("AnimationLibrary_mouu2")
+}

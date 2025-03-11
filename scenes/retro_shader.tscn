@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bakwbtw0ob44f"]
+
+[ext_resource type="Shader" path="res://Shaders/retro_shader_2.gdshader" id="14_rs3ur"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4ic2u"]
+shader = ExtResource("14_rs3ur")
+shader_parameter/vignette_strength = 0.7
+shader_parameter/vignette_softness = 1.0
+shader_parameter/brightness = 1.0
+shader_parameter/contrast = 1.1
+shader_parameter/color_tint = Vector3(1, 0.95, 0.9)
+shader_parameter/film_grain_strength = 0.02
+shader_parameter/scanline_strength = 0.02
+shader_parameter/color_grading = Vector3(1.1, 1, 0.9)
+
+[node name="retro_shader" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_4ic2u")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

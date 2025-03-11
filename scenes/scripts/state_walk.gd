@@ -20,11 +20,13 @@ func Exit() -> void:
 	
 
 func Process(_delta : float) -> State:
+
 	if player.direction == Vector3.ZERO:
 		return idle
 	
 	if Input.is_action_pressed("run"):
 		return running
+	
 	
 	player.velocity.x = player.direction.x * SPEED
 	player.velocity.z = player.direction.z * SPEED

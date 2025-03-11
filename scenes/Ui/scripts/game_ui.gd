@@ -10,5 +10,4 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
 # create function for player HUD

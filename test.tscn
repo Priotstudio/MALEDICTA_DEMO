@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1ojqh5db4m4y"]
+[gd_scene load_steps=8 format=3 uid="uid://d1ojqh5db4m4y"]
 
-[ext_resource type="PackedScene" uid="uid://cmkqgy4e1mm5a" path="res://scenes/Levels/level_transition.tscn" id="2_2u4cx"]
+[ext_resource type="Shader" path="res://Shaders/light.gdshader" id="1_rs120"]
+[ext_resource type="Script" path="res://tesr.gd" id="2_cxpqj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_chjpm"]
 sky_top_color = Color(0.403922, 0.639216, 0.752941, 1)
@@ -16,7 +17,35 @@ background_mode = 2
 sky = SubResource("Sky_1dir2")
 tonemap_mode = 2
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_klnad"]
+shader = ExtResource("1_rs120")
+shader_parameter/light_direction = Vector3(1, -1, 0)
+shader_parameter/light_color = Vector4(1, 1, 1, 1)
+shader_parameter/light_intensity = 1.0
+shader_parameter/shadow_strength = 1.0
+shader_parameter/ambient_strength = 0.2
+shader_parameter/ambient_color = Vector4(0.2, 0.2, 0.2, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a2dmn"]
+shader = ExtResource("1_rs120")
+shader_parameter/light_direction = Vector3(-0.5, -0.5, -0.5)
+shader_parameter/light_color = Vector4(1, 1, 1, 1)
+shader_parameter/light_intensity = 1.0
+shader_parameter/shadow_strength = 0.5
+shader_parameter/ambient_strength = 0.2
+shader_parameter/ambient_color = Vector4(0.2, 0.2, 0.2, 1)
+
 [node name="Test" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+light_color = Color(0.915099, 0.865008, 0.154805, 1)
+light_energy = 0.5
+light_bake_mode = 1
+directional_shadow_mode = 0
+directional_shadow_fade_start = 0.0
+directional_shadow_max_distance = 15.0
+sky_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_icrqv")
@@ -27,7 +56,8 @@ collision_layer = 2
 collision_mask = 0
 size = Vector3(1000, 1, 1000)
 
-[node name="LevelTransition_test" parent="." instance=ExtResource("2_2u4cx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.0075)
-level = "res://scenes/main.tscn"
-target_tansition_area = "LevelTransition_test"
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.980618, 0)
+material_override = SubResource("ShaderMaterial_klnad")
+script = ExtResource("2_cxpqj")
+custom_material = SubResource("ShaderMaterial_a2dmn")

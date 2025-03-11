@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bcitihbkegwa4"]
 
-[ext_resource type="Shader" path="res://scenes/render.gdshader" id="1_dj8ha"]
+[ext_resource type="Shader" path="res://Shaders/render.gdshader" id="1_dj8ha"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_ihs5m"]
 

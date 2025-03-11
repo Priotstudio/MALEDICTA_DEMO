@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bv2v0g6wu64ua"]
+
+[ext_resource type="Script" path="res://scenes/Ui/inventory/scripts/resource_item_data.gd" id="1_esaha"]
+[ext_resource type="Texture2D" uid="uid://dtfl07bwchs8j" path="res://scenes/Ui/inventory/images/Inspiration_for_a_bottle_of_Verin_s_poison_-removebg-preview.png" id="2_m4oex"]
+
+[resource]
+script = ExtResource("1_esaha")
+name = "Health Potion"
+decription = "A concusion brewed to heal up any damage taken to a specific amount."
+texture = ExtResource("2_m4oex")
+is_consumable = true

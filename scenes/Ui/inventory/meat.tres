@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://fm6p4f484dbq"]
+
+[ext_resource type="Script" path="res://scenes/Ui/inventory/scripts/resource_item_data.gd" id="1_cd23i"]
+[ext_resource type="Texture2D" uid="uid://bqohv3uqq5b55" path="res://scenes/Ui/inventory/images/0b6cfdb6-698f-4e76-84d1-e72168e411ca-removebg-preview.png" id="2_i7wsb"]
+
+[resource]
+script = ExtResource("1_cd23i")
+name = "Meat"
+decription = "A big juicy meat that replenish your health and stamina."
+texture = ExtResource("2_i7wsb")
+is_consumable = true
